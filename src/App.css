@@ -1,6 +1,21 @@
 .App {
   text-align: center;
 }
+.bg{
+  background: #61dafb;
+  width: 100%;
+  height: 100vh;
+}
+
+.center{
+  font-size: 50px;
+  text-align: center;
+}
+
+.search{
+  font-size: 25px;
+  position: center;
+}
 
 .App-logo {
   height: 40vmin;
