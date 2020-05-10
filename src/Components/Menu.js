@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom';
 import { MenuList, MenuItem, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import ListRoundedIcon from '@material-ui/icons/ListRounded';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+
         display: 'none',
         [theme.breakpoints.up('sm')]: {
             display: 'block',
@@ -75,22 +77,12 @@ export default function Menu() {
                 <Toolbar>
                     <IconButton
                         edge="start"
+                        size="small"
                         className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer"
                     >
-
-                        <MenuItem component={ Link } to="/Add">
-                            Add Player
-                        </MenuItem>
-                        <MenuItem component={ Link } to="/Edit">
-                            Edit Player
-                        </MenuItem>
-                        <MenuItem component={ Link } to="/Remove">
-                            Remove Player
-                        </MenuItem>
-
-
+                        <ListRoundedIcon/>
                     </IconButton>
                     <Button color='inherit' className={classes.title} variant="h6" noWrap component={Link} to="/Home" >
                         Golf League

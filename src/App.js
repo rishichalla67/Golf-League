@@ -1,30 +1,27 @@
 import React, {Component} from 'react';
 import './App.css';
 import playerForm from './Components/playerForm'
-import Menu from './Components/Menu'
 import Home from './Components/Home/Home'
 import { BrowserRouter as Router, Route, Switch, Redirect  } from 'react-router-dom';
+
+
 
 
 class App extends Component {
 
     render() {
         return (
-
             <Router>
                 <div className={'App'}>
                     <Switch>
                         <Route exact path="/Home" component={Home} />
                         <Route exact path="/Add" component={playerForm} />
-
                         <Route exact path="/">
                             <Redirect to="/Home" />
                         </Route>
-
                     </Switch>
                 </div>
             </Router>
-
         );
     }
 }

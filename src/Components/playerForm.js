@@ -1,25 +1,23 @@
 import React, {Fragment} from "react";
 import { Formik, Field, Form} from 'formik'
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button} from "@material-ui/core";
+import Alert from '@material-ui/lab/Alert';
 import Menu from './Menu'
 import axios from 'axios'
 
-var idTracker = 0;
-
-class playerForm extends React.Component {
-    constructor() {
-        super();
-
-        //this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+function validateEmail(value) {
+    let error;
+    if (!value) {
+        error = 'Required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+        error = 'Invalid email address';
     }
+    return error;
+}
 
-    /*
-    handleChange = e  => {
-        this.setState({ [e.target.name]: e.target.value })
-    }*/
+export default function playerForm() {
 
-    async handleSubmit(values) {
+    const handleSubmit = (values) => {
         axios.post(`http://localhost:3004/users`, values)
             .then(res => {
                 console.log(res);
@@ -27,60 +25,59 @@ class playerForm extends React.Component {
             })
             .then((response) => {
                 console.log(response);
-            }, (error) => {
-                console.log(error);
-            });
-    }
+                }, (error) => {
+                    console.log(error);
+                });
+    };
 
-
-        render() {
-        return (
-            <Fragment>
-                <div className='bg'>
-                    <Menu/>
-                    <h1>ADD PLAYER</h1>
-                    <Formik
-                        initialValues={{
-                            First: '',
-                            Last: '',
-                            Email: '',
-                            Phone: '',
-                            Handicap: ''
-                        }}
-                        onSubmit={(values, {setSubmitting}) => {
-                            idTracker = idTracker + 1;
-                            this.handleSubmit(values)
-                            setSubmitting(true)
-                            alert('Player Added! Thank you!')
-                            setSubmitting(false)
-                        }}>
-                        {({values, isSubmitting}) => (
-                            <Form>
-
-                                <Field placeholder='First' name="First" type='input' as={TextField}/>
-                                <div>
-                                    <Field placeholder='Last' name="Last" type='input' as={TextField}/>
-                                </div>
-                                <div>
-                                    <Field placeholder='Email' name="Email" type='input' as={TextField}/>
-                                </div>
-                                <div>
-                                    <Field placeholder='Phone' name="Phone" type='input' as={TextField}/>
-                                </div>
-                                <div>
-                                    <Field placeholder='Handicap' name="Handicap" type='input' as={TextField}/>
-                                </div>
-
-                                <div>
-                                    <Button disabled={isSubmitting} type="submit">Submit</Button>
-                                </div>
-                            </Form>
-                        )}</Formik>
-                </div>
-            </Fragment>
-
-        );
-    }
+    return (
+        <Fragment classname='container'>
+            <div className='bg'>
+                <Menu/>
+                <h1>Add Player</h1>
+                <Formik
+                    initialValues={{
+                        First: '',
+                        Last: '',
+                        Email: '',
+                        Phone: '',
+                        Handicap: ''
+                    }}
+                    onSubmit={(values, {setSubmitting}) => {
+                        if(values.First === ''){values.First = 'N/A'}
+                        if(values.Last === ''){values.Last = 'N/A'}
+                        if(values.Email === ''){values.Email = 'N/A'}
+                        if(values.Phone === ''){values.Phone = 'N/A'}
+                        if(values.Handicap === ''){values.Handicap = 'N/A'}
+                        handleSubmit(values);
+                        setSubmitting(true);
+                        alert('Player Added');
+                        setSubmitting(false)
+                    }}>
+                    {({values, isSubmitting, validateEmail, errors, touched}) => (
+                        <Form>
+                            <Field placeholder='First' name="First" type='input' as={TextField}/>
+                            <div>
+                                <Field placeholder='Last' name="Last" type='input' as={TextField}/>
+                            </div>
+                            <div>
+                                <Field placeholder='Email' name="Email" type='input' as={TextField} validate={validateEmail}/>
+                                {errors.email && touched.email && <div>{errors.email}</div>}
+                            </div>
+                            <div>
+                                <Field placeholder='Phone' name="Phone" type='input' as={TextField}/>
+                            </div>
+                            <div>
+                                <Field placeholder='Handicap' name="Handicap" type='input' as={TextField}/>
+                            </div>
+                            <div>
+                                <Button disabled={isSubmitting} type="submit">Submit</Button>
+                            </div>
+                        </Form>
+                    )}
+                </Formik>
+            </div>
+        </Fragment>
+    );
 }
 
-export default playerForm
