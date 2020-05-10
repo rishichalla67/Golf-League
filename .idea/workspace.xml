@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69af5031-b306-4d38-b6f4-24c94a8bc082" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Menu/MenuDropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ScoreCard/ScoreCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ScoreCard/ScoreCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/playerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/playerForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ViewPlayers.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TableView/ViewPlayers.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ViewPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TableView/ViewPlayers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/playerForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/playerForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/playerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/playerForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="FormDev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,10 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Form" />
+      <recent name="$PROJECT_DIR$/src/Components/TableView" />
+      <recent name="$PROJECT_DIR$/src/Components/Menu" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/Components/Home" />
-      <recent name="$PROJECT_DIR$/src/Components" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -98,7 +108,7 @@
       <updated>1584387309553</updated>
       <workItem from="1584387313913" duration="3484000" />
       <workItem from="1588776388779" duration="71000" />
-      <workItem from="1588776462745" duration="66007000" />
+      <workItem from="1588776462745" duration="72433000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1588978691556</created>
@@ -128,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589129253429</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Form Validation Complete">
+      <created>1589130554374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589130554374</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +166,8 @@
     <MESSAGE value="Initial" />
     <MESSAGE value="Add, Edit, Remove player working: Currently working on form validation and possibly search" />
     <MESSAGE value="Email Validation Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Email Validation Complete" />
+    <MESSAGE value="Form Validation Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form Validation Complete" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="65" key="#ESLint" timestamp="1589060348668">
@@ -160,10 +178,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1589063932190" />
-    <state x="222" y="5" key="CommitChangelistDialog2" timestamp="1589129253128">
+    <state x="222" y="5" key="CommitChangelistDialog2" timestamp="1589130553989">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="222" y="5" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1589129253128" />
+    <state x="222" y="5" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1589130553989" />
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict" timestamp="1589071107183">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -184,9 +202,9 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1259" height="161" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1589093639569" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1588777463392">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1589130560021">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1588777463392" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1589130560021" />
   </component>
 </project>

@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 import { Formik, Field, Form, useField} from 'formik'
 import { TextField, Button} from "@material-ui/core";
 import Alert from '@material-ui/lab/Alert';
-import Menu from './Menu'
+import Menu from '../Menu/Menu'
 import axios from 'axios'
 import * as yup from 'yup';
 
@@ -15,11 +15,13 @@ const MyTextField = ({placeholder, ...props}) => {
         <TextField {...field} placeholder={placeholder} helperText={errorText} error={!!errorText}/>
     );
 };
-
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const validationSchema = yup.object({
+
     First: yup.string().required().min(1),
     Last: yup.string().required().min(1),
-    Email: yup.string().required().email()
+    Email: yup.string().required().email(),
+    Phone: yup.string().required().matches(phoneRegExp, 'Phone Number is not valid')
 })
 
 
@@ -75,6 +77,7 @@ export default function playerForm() {
                         setSubmitting(true);
                         alert('Player Added');
                         setSubmitting(false)
+                        window.location.reload();
                     }}>
                     {({values, isSubmitting}) => (
                         <Form>

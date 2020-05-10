@@ -1,8 +1,8 @@
 import React from "react";
 //import { useState, useCallback } from 'react'
-import Menu from "../Menu";
+import Menu from "../Menu/Menu";
 import './Home.css'
-import ViewPlayers from "../ViewPlayers";
+import ViewPlayers from "../TableView/ViewPlayers";
 import axios from "axios";
 import orderBy from 'lodash/orderBy';
 
@@ -47,6 +47,7 @@ export default function Home() {
                 console.log('Delete: ' + result)
             }
         )
+        window.location.reload();
     };
 
     const startEditing = (i) => {
@@ -60,6 +61,7 @@ export default function Home() {
                 //console.log(res);
             }
         )
+        window.location.reload();
     };
 
 

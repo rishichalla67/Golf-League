@@ -9,7 +9,8 @@ import {Link} from 'react-router-dom';
 import { MenuList, MenuItem, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import ListRoundedIcon from '@material-ui/icons/ListRounded';
+import MenuDropdown from "./MenuDropdown";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2),
     },
     title: {
-        flexGrow: 1,
+        flexGrow: .9,
+        marginLeft: 170,
 
         display: 'none',
         [theme.breakpoints.up('sm')]: {
@@ -75,15 +77,18 @@ export default function Menu() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton
-                        edge="start"
-                        size="small"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
+
+                    <div
+                        // edge="start"
+                        // size="small"
+                        // className={classes.menuButton}
+                        // color="inherit"
+                        // aria-label="open drawer"
                     >
-                        <ListRoundedIcon/>
-                    </IconButton>
+                        {/*insert the component for the menu drawer*/}
+                        <MenuDropdown/>
+
+                    </div>
                     <Button color='inherit' className={classes.title} variant="h6" noWrap component={Link} to="/Home" >
                         Golf League
                     </Button>
