@@ -98,7 +98,7 @@
       <updated>1584387309553</updated>
       <workItem from="1584387313913" duration="3484000" />
       <workItem from="1588776388779" duration="71000" />
-      <workItem from="1588776462745" duration="64954000" />
+      <workItem from="1588776462745" duration="66007000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1588978691556</created>
@@ -121,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589126304487</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Email Validation Complete">
+      <created>1589129253429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589129253429</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +148,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial" />
     <MESSAGE value="Add, Edit, Remove player working: Currently working on form validation and possibly search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add, Edit, Remove player working: Currently working on form validation and possibly search" />
+    <MESSAGE value="Email Validation Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Email Validation Complete" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="65" key="#ESLint" timestamp="1589060348668">
@@ -152,10 +160,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1589063932190" />
-    <state x="222" y="5" key="CommitChangelistDialog2" timestamp="1589126303855">
+    <state x="222" y="5" key="CommitChangelistDialog2" timestamp="1589129253128">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="222" y="5" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1589126303855" />
+    <state x="222" y="5" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1589129253128" />
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict" timestamp="1589071107183">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
