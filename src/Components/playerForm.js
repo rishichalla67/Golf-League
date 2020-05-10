@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import { Formik, Field, Form} from 'formik'
+import { Formik, Field, Form, useField} from 'formik'
 import { TextField, Button} from "@material-ui/core";
 import Alert from '@material-ui/lab/Alert';
 import Menu from './Menu'
@@ -14,6 +14,15 @@ function validateEmail(value) {
     }
     return error;
 }
+
+const MyTextField = ({placeholder, ...props}) => {
+    const [field, meta] = useField(props);
+    const errorText = meta.error && meta.touched ? meta.error : '';
+
+    return(
+        <TextField {...field} placeholder={placeholder} helperText={errorText}/>
+    );
+};
 
 export default function playerForm() {
 
@@ -43,6 +52,15 @@ export default function playerForm() {
                         Phone: '',
                         Handicap: ''
                     }}
+                    validate={(values) => {
+                        const errors = {};
+
+                        if(!(values.Email.includes('@')))
+                        {
+                            errors.Email = 'Please Enter a Valid Email'
+                        }
+                        return errors;
+                    }}
                     onSubmit={(values, {setSubmitting}) => {
                         if(values.First === ''){values.First = 'N/A'}
                         if(values.Last === ''){values.Last = 'N/A'}
@@ -54,15 +72,16 @@ export default function playerForm() {
                         alert('Player Added');
                         setSubmitting(false)
                     }}>
-                    {({values, isSubmitting, validateEmail, errors, touched}) => (
+                    {({values, isSubmitting}) => (
                         <Form>
+
                             <Field placeholder='First' name="First" type='input' as={TextField}/>
                             <div>
                                 <Field placeholder='Last' name="Last" type='input' as={TextField}/>
                             </div>
                             <div>
-                                <Field placeholder='Email' name="Email" type='input' as={TextField} validate={validateEmail}/>
-                                {errors.email && touched.email && <div>{errors.email}</div>}
+                                <MyTextField placeholder='Email' name="Email" type='input' as={TextField}/>
+
                             </div>
                             <div>
                                 <Field placeholder='Phone' name="Phone" type='input' as={TextField}/>
