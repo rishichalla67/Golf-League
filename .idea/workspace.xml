@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69af5031-b306-4d38-b6f4-24c94a8bc082" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Home/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/playerForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/playerForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/individual-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Golf League.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +13,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="FormDev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZDx8ufJc8jOThdhBSjeqI3AHF7" />
@@ -53,18 +41,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Form" />
+      <recent name="$PROJECT_DIR$/src/Components/TableView" />
+      <recent name="$PROJECT_DIR$/src/Components/Menu" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/Components/Home" />
-      <recent name="$PROJECT_DIR$/src/Components" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -106,37 +98,115 @@
       <updated>1584387309553</updated>
       <workItem from="1584387313913" duration="3484000" />
       <workItem from="1588776388779" duration="71000" />
-      <workItem from="1588776462745" duration="38670000" />
+      <workItem from="1588776462745" duration="72667000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial">
+      <created>1588978691556</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588978691557</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial">
+      <created>1588978922504</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588978922505</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add, Edit, Remove player working: Currently working on form validation and possibly search">
+      <created>1589126304487</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589126304487</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Email Validation Complete">
+      <created>1589129253429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589129253429</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Form Validation Complete">
+      <created>1589130554374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589130554374</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ScoreCard development. Page and component created">
+      <created>1589148607921</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1589148607921</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial" />
+    <MESSAGE value="Add, Edit, Remove player working: Currently working on form validation and possibly search" />
+    <MESSAGE value="Email Validation Complete" />
+    <MESSAGE value="Form Validation Complete" />
+    <MESSAGE value="ScoreCard development. Page and component created" />
+    <option name="LAST_COMMIT_MESSAGE" value="ScoreCard development. Page and component created" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588872256920">
+    <state x="240" y="65" key="#ESLint" timestamp="1589060348668">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1588872256920" />
-    <state width="1259" height="161" key="GridCell.Tab.0.bottom" timestamp="1588963461046">
+    <state x="240" y="65" key="#ESLint/0.0.1280.800@0.0.1280.800" timestamp="1589060348668" />
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589063932190">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="161" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1588963461046" />
-    <state width="1259" height="161" key="GridCell.Tab.0.center" timestamp="1588963461043">
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1589063932190" />
+    <state x="222" y="5" key="CommitChangelistDialog2" timestamp="1589148607508">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="161" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1588963461043" />
-    <state width="1259" height="161" key="GridCell.Tab.0.left" timestamp="1588963461040">
+    <state x="222" y="5" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1589148607508" />
+    <state x="0" y="23" key="FileDocumentManager.FileCacheConflict" timestamp="1589071107183">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1280.777@0.23.1280.777" timestamp="1589071107183" />
+    <state width="1259" height="161" key="GridCell.Tab.0.bottom" timestamp="1589093639570">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="161" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1588963461040" />
-    <state width="1259" height="161" key="GridCell.Tab.0.right" timestamp="1588963461045">
+    <state width="1259" height="161" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1589093639570" />
+    <state width="1259" height="161" key="GridCell.Tab.0.center" timestamp="1589093639568">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="161" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1588963461045" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1588777463392">
+    <state width="1259" height="161" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1589093639568" />
+    <state width="1259" height="161" key="GridCell.Tab.0.left" timestamp="1589093639567">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1588777463392" />
+    <state width="1259" height="161" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1589093639567" />
+    <state width="1259" height="161" key="GridCell.Tab.0.right" timestamp="1589093639569">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1259" height="161" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1589093639569" />
+    <state x="386" y="120" key="git4idea.branch.GitSmartOperationDialog" timestamp="1589148827286">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="386" y="120" key="git4idea.branch.GitSmartOperationDialog/0.0.1280.800@0.0.1280.800" timestamp="1589148827286" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1589130560021">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1589130560021" />
   </component>
 </project>

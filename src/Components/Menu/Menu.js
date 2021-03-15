@@ -9,6 +9,9 @@ import {Link} from 'react-router-dom';
 import { MenuList, MenuItem, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuDropdown from "./MenuDropdown";
+import "./Menu.css";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,7 +22,9 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2),
     },
     title: {
-        flexGrow: 1,
+        flexGrow: .9,
+        marginLeft: 170,
+
         display: 'none',
         [theme.breakpoints.up('sm')]: {
             display: 'block',
@@ -73,40 +78,25 @@ export default function Menu() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
+
+                    <div
+                        // edge="start"
+                        // size="small"
+                        // className={classes.menuButton}
+                        // color="inherit"
+                        // aria-label="open drawer"
                     >
+                        {/*insert the component for the menu drawer*/}
+                        <MenuDropdown/>
 
-                        <MenuItem component={ Link } to="/Add">
-                            Add Player
-                        </MenuItem>
-                        <MenuItem component={ Link } to="/Edit">
-                            Edit Player
-                        </MenuItem>
-                        <MenuItem component={ Link } to="/Remove">
-                            Remove Player
-                        </MenuItem>
-
-
-                    </IconButton>
+                    </div>
                     <Button color='inherit' className={classes.title} variant="h6" noWrap component={Link} to="/Home" >
                         Golf League
                     </Button>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
+                    <div className='login-button'>
+                        <a href="../login" className="button1" >Login</a>
+                        
+                        <a href="../SignUp" className="button1">Signup</a>
                     </div>
                 </Toolbar>
             </AppBar>
