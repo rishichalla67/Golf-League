@@ -10,6 +10,7 @@ import { MenuList, MenuItem, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuDropdown from "./MenuDropdown";
+import "./Menu.css";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -92,18 +93,10 @@ export default function Menu() {
                     <Button color='inherit' className={classes.title} variant="h6" noWrap component={Link} to="/Home" >
                         Golf League
                     </Button>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
+                    <div className='login-button'>
+                        <a href="../login" className="button1" >Login</a>
+                        
+                        <a href="../SignUp" className="button1">Signup</a>
                     </div>
                 </Toolbar>
             </AppBar>
