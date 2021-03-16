@@ -18,13 +18,13 @@ class App extends Component {
                 <div className={'App'}>
                     <Switch>
                         <AuthProvider>
+                            <Route exact path="/Login" component={login} />
                             <Route exact path="/Home" component={Home} />
                             <Route exact path="/SignUp" component={SignUp} />
-                            <Route exact path="/Login" component={login} />
                             <Route exact path="/Add" component={playerForm} />
                             <Route exact path="/Scorecard" component={ScoreCard} />
                             <Route exact path="/">
-                                <Redirect to="/SignUp" />
+                                <Redirect to="/Login" />
                             </Route>
                         </AuthProvider>
                     </Switch>
