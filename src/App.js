@@ -7,6 +7,8 @@ import ScoreCard from './Components/ScoreCard/ScoreCard'
 import SignUp from './Components/Authentication/SignUp';
 import { AuthProvider } from './contexts/AuthContext';
 import login from './Components/Authentication/Login';
+import Profile from './Components/Profile/Profile';
+import UpdateProfile from './Components/Profile/UpdateProfile';
 
 
 
@@ -22,6 +24,8 @@ class App extends Component {
                             <Route exact path="/Home" component={Home} />
                             <Route exact path="/SignUp" component={SignUp} />
                             <Route exact path="/Add" component={playerForm} />
+                            <Route exact path="/Profile" component={Profile} />
+                            <Route exact path="/update-profile" component={UpdateProfile} />
                             <Route exact path="/Scorecard" component={ScoreCard} />
                             <Route exact path="/">
                                 <Redirect to="/Login" />

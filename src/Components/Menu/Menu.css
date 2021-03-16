@@ -18,9 +18,9 @@ a.button1:hover{
     cursor: pointer;
 
 }
-@media all and (max-width:30em){
+/* @media all and (max-width:30em){
     a.button1{
     display:block;
     margin:0.4em auto;
     }
-}
+} */
