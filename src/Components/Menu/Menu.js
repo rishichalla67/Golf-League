@@ -1,10 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Link, useHistory} from "react-router-dom"
+import {useAuth} from '../../contexts/AuthContext'
 import "./Menu.css";
 
 
 
 export default function Menu() {
+    const [error, setError] = useState("")
+    const {currentUser, logout} = useAuth()
+    const history = useHistory()
+
+    async function handleLogOut() {
+        setError('')
+
+        try {
+            await logout()
+            history.push('/Login')
+        } catch {
+            setError('Failed to log out')
+        }
+    }
+
     return(
         
                 <header>
@@ -12,8 +28,9 @@ export default function Menu() {
                     <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
                     <nav>
                         <ul>
-                            <li><a href="/Home">Home</a></li>
-                            <li><a href="/Profile">Profile</a></li>
+                            <li><a href="/Home" style={{color: 'white'}}>Home</a></li>
+                            <li><a href="/Profile" style={{color: 'white'}}>Profile</a></li>
+                            <li><a href="#" onClick={handleLogOut} style={{color: 'white'}}>Logout</a></li>
                         </ul>
                     </nav>
                     <label for="nav-toggle" class="nav-toggle-label">
