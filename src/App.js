@@ -9,6 +9,8 @@ import { AuthProvider } from './contexts/AuthContext';
 import login from './Components/Authentication/Login';
 import Profile from './Components/Profile/Profile';
 import UpdateProfile from './Components/Profile/UpdateProfile';
+import PrivateRoute from "./Components/PrivateRoute"
+import ForgotPassword from "./Components/Authentication/ForgotPassword"
 
 
 
@@ -21,15 +23,17 @@ class App extends Component {
                     <Switch>
                         <AuthProvider>
                             <Route exact path="/Login" component={login} />
-                            <Route exact path="/Home" component={Home} />
                             <Route exact path="/SignUp" component={SignUp} />
-                            <Route exact path="/Add" component={playerForm} />
-                            <Route exact path="/Profile" component={Profile} />
-                            <Route exact path="/update-profile" component={UpdateProfile} />
-                            <Route exact path="/Scorecard" component={ScoreCard} />
-                            <Route exact path="/">
+                            <Route exact path="/forgot-password" component={ForgotPassword} />
+                            {/* Private Routes */}
+                            <PrivateRoute exact path="/Home" component={Home} />
+                            <PrivateRoute exact path="/Add" component={playerForm} />
+                            <PrivateRoute exact path="/Profile" component={Profile} />
+                            <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+                            <PrivateRoute exact path="/Scorecard" component={ScoreCard} />
+                            <PrivateRoute exact path="/">
                                 <Redirect to="/Login" />
-                            </Route>
+                            </PrivateRoute>
                         </AuthProvider>
                     </Switch>
                 </div>

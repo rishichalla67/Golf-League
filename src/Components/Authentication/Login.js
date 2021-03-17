@@ -30,12 +30,12 @@ export default function Login() {
 
     return(
         <body className='d-block' style={{background: 'linear-gradient(90deg, rgba(133,127,232,1) 12%, rgba(35,193,150,1) 51%, rgba(34,178,207,1) 95%)'}}>
-            <Menu/>
+           
             <Container className="d-flex align-items-center justify-content-center container" style={{minHeight: "100vh", background: "none", paddingTop: '-50%'}}>
-                <div className="w-100" style={{maxWidth: '35rem'}}>
+                <div className="w-100" style={{maxWidth: '30rem'}}>
                 <Card className="w-80" style={{padding: '2rem'}}>
                     <Card.Body>
-                        <h2 className="text-center mb-4">Log In</h2>
+                        <h2 className="text-center" style={{padding: 0}}>Log In</h2>
                         {error && <Alert variant="danger">{error}</Alert>}
                     </Card.Body>
                     <Form onSubmit={handleSubmit}>
@@ -49,6 +49,10 @@ export default function Login() {
                         </Form.Group>
                         <Button disabled={loading} className="w-100" type="submit">Log In</Button>
                     </Form>
+                    <div className="w-100 text-center mt-3">
+                        <Link to='/forgot-password'>Forgot Password?</Link>
+                    </div>
+                    
                 </Card>
             
                     <div className="w-100 text-center mt-2"> Don't have an account? <Link to="/SignUp" style={{color: 'white'}}>Sign Up</Link>

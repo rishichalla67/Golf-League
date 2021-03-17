@@ -18,9 +18,6 @@ export default function Menu() {
                     <NavLink to="/Profile" activeStyle>
                         My Profile
                     </NavLink>
-                    <NavLink to="/#" activeStyle>
-                        Log Out
-                    </NavLink>
                 </NavMenu>
                 <NavBtn>
                     <NavBtnLink to="/Login">Log In</NavBtnLink>
