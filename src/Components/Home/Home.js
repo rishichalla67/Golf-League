@@ -82,7 +82,7 @@ export default function Home() {
         <div className='bg'>
             <Menu/>
             <div className='container'>
-                <h2>Welcome to the Golf League Application!</h2>
+                <h2 className="header">Welcome to the Golf League Application!</h2>
                 <div>
                     <ViewPlayers
                     handleRemove={handleRemove}
