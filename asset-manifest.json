@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Golf-League/static/css/main.928aa00d.chunk.css",
+    "main.js": "/Golf-League/static/js/main.5d5fb1fb.chunk.js",
+    "main.js.map": "/Golf-League/static/js/main.5d5fb1fb.chunk.js.map",
+    "runtime-main.js": "/Golf-League/static/js/runtime-main.7040b3fd.js",
+    "runtime-main.js.map": "/Golf-League/static/js/runtime-main.7040b3fd.js.map",
+    "static/css/2.b0704b7a.chunk.css": "/Golf-League/static/css/2.b0704b7a.chunk.css",
+    "static/js/2.cf503ab8.chunk.js": "/Golf-League/static/js/2.cf503ab8.chunk.js",
+    "static/js/2.cf503ab8.chunk.js.map": "/Golf-League/static/js/2.cf503ab8.chunk.js.map",
+    "index.html": "/Golf-League/index.html",
+    "precache-manifest.404e312b2007922df3e0bb6c4dc4fa5b.js": "/Golf-League/precache-manifest.404e312b2007922df3e0bb6c4dc4fa5b.js",
+    "service-worker.js": "/Golf-League/service-worker.js",
+    "static/css/2.b0704b7a.chunk.css.map": "/Golf-League/static/css/2.b0704b7a.chunk.css.map",
+    "static/css/main.928aa00d.chunk.css.map": "/Golf-League/static/css/main.928aa00d.chunk.css.map",
+    "static/js/2.cf503ab8.chunk.js.LICENSE.txt": "/Golf-League/static/js/2.cf503ab8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7040b3fd.js",
+    "static/css/2.b0704b7a.chunk.css",
+    "static/js/2.cf503ab8.chunk.js",
+    "static/css/main.928aa00d.chunk.css",
+    "static/js/main.5d5fb1fb.chunk.js"
+  ]
+}
