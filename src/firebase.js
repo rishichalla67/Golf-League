@@ -3,14 +3,15 @@ import "firebase/auth"
 
 
 
+
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyCWEjX3-KC5DmpTfUofWfnJJR-gGbQCqtc",
-    authDomain: "golf-league-b508f.firebaseapp.com",
-    projectId: "golf-league-b508f",
-    storageBucket: "golf-league-b508f.appspot.com",
-    messagingSenderId: "1053908377547",
-    appId: "1:1053908377547:web:ddbcb9603ea2c4b3dca04e",
-    measurementId: "G-ZDWVT8WZH8"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_API_KEY,
+    projectId: process.env.REACT_APP_FIREBASE_API_KEY,
+    storageBucket: process.env.REACT_APP_FIREBASE_API_KEY,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_API_KEY,
+    appId: process.env.REACT_APP_FIREBASE_API_KEY,
+    measurementId: process.env.REACT_APP_FIREBASE_API_KEY
 })
 
 export const auth = app.auth()

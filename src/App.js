@@ -22,6 +22,9 @@ class App extends Component {
                 <div className={'App'}>
                     <Switch>
                         <AuthProvider>
+                            <Route exact path="/">
+                                <Redirect to="/Login" />
+                            </Route>
                             <Route exact path="/Login" component={login} />
                             <Route exact path="/SignUp" component={SignUp} />
                             <Route exact path="/forgot-password" component={ForgotPassword} />
@@ -31,9 +34,6 @@ class App extends Component {
                             <PrivateRoute exact path="/Profile" component={Profile} />
                             <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
                             <PrivateRoute exact path="/Scorecard" component={ScoreCard} />
-                            <PrivateRoute exact path="/">
-                                <Redirect to="/Login" />
-                            </PrivateRoute>
                         </AuthProvider>
                     </Switch>
                 </div>
