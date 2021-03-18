@@ -22,7 +22,7 @@ export default function Profile() {
         }
     }
     return (
-        <body  style={{background: 'linear-gradient(90deg, rgba(133,127,232,1) 12%, rgba(35,193,150,1) 51%, rgba(34,178,207,1) 95%)'}}>
+        <body  style={{background: 'rgb(119, 255, 180)'}}>
             <Menu/>
             <Container className="d-flex align-items-center justify-content-center container" style={{minHeight: "100vh", background: "none", paddingTop: '-50%'}}>
             <>
@@ -36,7 +36,7 @@ export default function Profile() {
                         </Card.Body>
                     </Card>
                     <div className="w-100 text-center mt-2"> 
-                        <Button variant="link" onClick={handleLogOut} style={{color: 'white'}}><b>Log Out</b></Button>
+                        <Button variant="link" onClick={handleLogOut} style={{color: 'black'}}><b>Log Out</b></Button>
                     </div>
             </>
             </Container>

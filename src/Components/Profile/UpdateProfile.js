@@ -46,7 +46,7 @@ export default function UpdateProfile() {
     }
 
     return(
-        <body className='d-block' style={{background: 'linear-gradient(90deg, rgba(133,127,232,1) 12%, rgba(35,193,150,1) 51%, rgba(34,178,207,1) 95%)'}}>
+        <body className='d-block' style={{background: 'rgb(119, 255, 180)'}}>
             <Menu/>
             <Container className="d-flex align-items-center justify-content-center container" style={{minHeight: "100vh", background: "none", paddingTop: '-50%'}}>
                 <div className="w-100" style={{maxWidth: '35rem'}}>
