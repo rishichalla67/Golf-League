@@ -3,6 +3,7 @@ import { Card, Form, Button, Container, Alert } from 'react-bootstrap';
 import Menu from "../Menu/Menu";
 import { AuthProvider, useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom';
+//import firestore from "./firestore"
 
 
 
@@ -59,6 +60,10 @@ export default function UpdateProfile() {
                         <Form.Group id="email">
                             <Form.Label >Email</Form.Label>
                             <Form.Control type="email" ref={emailRef} required defaultValue={currentUser.email}/>
+                        </Form.Group>
+                        <Form.Group id="email">
+                            <Form.Label >NickName</Form.Label>
+                            <Form.Control type="email" ref={emailRef} required defaultValue={currentUser.nickname}/>
                         </Form.Group>
                         <Form.Group id="password">
                             <Form.Label>Password</Form.Label>

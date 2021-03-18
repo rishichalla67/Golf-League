@@ -19,6 +19,7 @@
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.0",
+    "react-firebase-hooks": "^3.0.2",
     "react-icons": "^4.2.0",
     "react-router": "latest",
     "react-scripts": "3.4.0",

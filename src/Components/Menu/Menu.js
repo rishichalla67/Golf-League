@@ -22,21 +22,21 @@ export default function Menu() {
     }
 
     return(
-        
-                <header>
-                    <h1 class="logo"><Link to="/Home">golFi</Link></h1>
-                    <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
-                    <nav>
-                        <ul>
-                            <li><a href="/Home" style={{color: 'white'}}>Home</a></li>
-                            <li><a href="/Profile" style={{color: 'white'}}>Profile</a></li>
-                            <li><a href="#" onClick={handleLogOut} style={{color: 'white'}}>Logout</a></li>
-                        </ul>
-                    </nav>
-                    <label for="nav-toggle" class="nav-toggle-label">
-                        <span></span>
-                    </label>
-                </header>
-        
+        <header>
+            <h1 class="logo"><Link to="/Home">golFi</Link></h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
+            <nav>
+                <ul>
+                    <li><a href="/Home" style={{color: 'white'}}>Home</a></li>
+                    <li><a href="/Profile" style={{color: 'white'}}>Profile</a></li>
+                    <li><a href="/Friends" style={{color: 'white'}}>Friends</a></li>
+                    <li><a href="/global-chat" style={{color: 'white'}}>Global Chat</a></li>
+                    <li><a href="#" onClick={handleLogOut} style={{color: 'white'}}>Logout</a></li>
+                </ul>
+            </nav>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+        </header>
     );
 }

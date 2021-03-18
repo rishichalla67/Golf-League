@@ -11,6 +11,8 @@ import Profile from './Components/Profile/Profile';
 import UpdateProfile from './Components/Profile/UpdateProfile';
 import PrivateRoute from "./Components/PrivateRoute"
 import ForgotPassword from "./Components/Authentication/ForgotPassword"
+import Friends from "./Components/Friends/Friends"
+import Chat from './Components/Chatroom/Chat';
 
 
 
@@ -30,6 +32,8 @@ class App extends Component {
                             <Route exact path="/forgot-password" component={ForgotPassword} />
                             {/* Private Routes */}
                             <PrivateRoute exact path="/Home" component={Home} />
+                            <PrivateRoute exact path="/Friends" component={Friends} />
+                            <PrivateRoute exact path="/global-chat" component={Chat} />
                             <PrivateRoute exact path="/Add" component={playerForm} />
                             <PrivateRoute exact path="/Profile" component={Profile} />
                             <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
