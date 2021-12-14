@@ -7,6 +7,12 @@ import ScoreCard from './Components/ScoreCard/ScoreCard'
 import SignUp from './Components/Authentication/SignUp';
 import { AuthProvider } from './contexts/AuthContext';
 import login from './Components/Authentication/Login';
+import Profile from './Components/Profile/Profile';
+import UpdateProfile from './Components/Profile/UpdateProfile';
+import PrivateRoute from "./Components/PrivateRoute"
+import ForgotPassword from "./Components/Authentication/ForgotPassword"
+import Friends from "./Components/Friends/Friends"
+import Chat from './Components/Chatroom/Chat';
 
 
 
@@ -18,14 +24,20 @@ class App extends Component {
                 <div className={'App'}>
                     <Switch>
                         <AuthProvider>
-                            <Route exact path="/Home" component={Home} />
-                            <Route exact path="/SignUp" component={SignUp} />
-                            <Route exact path="/Login" component={login} />
-                            <Route exact path="/Add" component={playerForm} />
-                            <Route exact path="/Scorecard" component={ScoreCard} />
                             <Route exact path="/">
-                                <Redirect to="/SignUp" />
+                                <Redirect to="/Login" />
                             </Route>
+                            <Route exact path="/Login" component={login} />
+                            <Route exact path="/SignUp" component={SignUp} />
+                            <Route exact path="/forgot-password" component={ForgotPassword} />
+                            {/* Private Routes */}
+                            <PrivateRoute exact path="/Home" component={Home} />
+                            <PrivateRoute exact path="/Friends" component={Friends} />
+                            <PrivateRoute exact path="/global-chat" component={Chat} />
+                            <PrivateRoute exact path="/Add" component={playerForm} />
+                            <PrivateRoute exact path="/Profile" component={Profile} />
+                            <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+                            <PrivateRoute exact path="/Scorecard" component={ScoreCard} />
                         </AuthProvider>
                     </Switch>
                 </div>

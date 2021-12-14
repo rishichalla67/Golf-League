@@ -1,0 +1,13 @@
+.chat-body {
+  position: fixed;
+  top: 12.5%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  /* padding: 10; */
+  border: 5px solid gray;
+  border-radius: 10px;
+  width: 80%;
+  min-height: 85%;
+  margin: 0;
+}

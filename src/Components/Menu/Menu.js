@@ -1,105 +1,42 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import {Link} from 'react-router-dom';
-import { MenuList, MenuItem, Button } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import MenuDropdown from "./MenuDropdown";
+import React, {useState} from 'react';
+import {Link, useHistory} from "react-router-dom"
+import {useAuth} from '../../contexts/AuthContext'
 import "./Menu.css";
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: .9,
-        marginLeft: 170,
-
-        display: 'none',
-        [theme.breakpoints.up('sm')]: {
-            display: 'block',
-        },
-    },
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
-        },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(1),
-            width: 'auto',
-        },
-    },
-    searchIcon: {
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    inputRoot: {
-        color: 'inherit',
-    },
-    inputInput: {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: '12ch',
-            '&:focus': {
-                width: '20ch',
-            },
-        },
-    },
-}));
 
 export default function Menu() {
-    const classes = useStyles();
+    const [error, setError] = useState("")
+    const {currentUser, logout} = useAuth()
+    const history = useHistory()
 
-    return (
-        <div className={classes.root}>
-            <AppBar position="static">
-                <Toolbar>
+    async function handleLogOut() {
+        setError('')
 
-                    <div
-                        // edge="start"
-                        // size="small"
-                        // className={classes.menuButton}
-                        // color="inherit"
-                        // aria-label="open drawer"
-                    >
-                        {/*insert the component for the menu drawer*/}
-                        <MenuDropdown/>
+        try {
+            await logout()
+            history.push('/Login')
+        } catch {
+            setError('Failed to log out')
+        }
+    }
 
-                    </div>
-                    <Button color='inherit' className={classes.title} variant="h6" noWrap component={Link} to="/Home" >
-                        Golf League
-                    </Button>
-                    <div className='login-button'>
-                        <a href="../login" className="button1" >Login</a>
-                        
-                        <a href="../SignUp" className="button1">Signup</a>
-                    </div>
-                </Toolbar>
-            </AppBar>
-        </div>
+    return(
+        <header>
+            <h1 class="logo"><Link to="/Home">golFi</Link></h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
+            <nav>
+                <ul>
+                    <li><a href="/Home" style={{color: 'white'}}>Home</a></li>
+                    <li><a href="/Profile" style={{color: 'white'}}>Profile</a></li>
+                    <li><a href="/Friends" style={{color: 'white'}}>Friends</a></li>
+                    <li><a href="/global-chat" style={{color: 'white'}}>Global Chat</a></li>
+                    <li><a href="#" onClick={handleLogOut} style={{color: 'white'}}>Logout</a></li>
+                </ul>
+            </nav>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+        </header>
     );
 }

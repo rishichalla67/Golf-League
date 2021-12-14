@@ -74,7 +74,7 @@ export default function MenuListComposition() {
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                                         <MenuItem component={Link} to='/Scorecard' onClick={handleClose}>ScoreCard</MenuItem>
-                                        {/*<MenuItem onClick={handleClose}>My account</MenuItem>*/}
+                                        <MenuItem component={Link} to='/Profile' onClick={handleClose}>My account</MenuItem>
                                         {/*<MenuItem onClick={handleClose}>Logout</MenuItem>*/}
                                     </MenuList>
                                 </ClickAwayListener>
