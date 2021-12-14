@@ -23,99 +23,15 @@ const invert = {
 
 export default function Home() {
 
-    const [players, setPlayers] = React.useState([]);
-    const [editIdx, setEditIdx] = React.useState(-1);
-    const [colToSort, setColToSort] = React.useState('')
-    const [sortDirection, setSortDirection] = React.useState('desc')
-    //const forceUpdate = useForceUpdate();
-
-    React.useEffect(() => {
-        axios.get("http://localhost:3004/users").then(
-            result => {
-                setPlayers(result.data);
-                //console.log(result);
-            })
-    }, []);
-
-
-
-    //WORKS
-    const handleRemove = (i) => {
-        axios.delete(`http://localhost:3004/users/${i}`).then(
-            result => {
-                //setPlayers(result.data);
-                console.log('Delete: ' + result)
-            }
-        )
-        window.location.reload();
-    };
-
-    const startEditing = (i) => {
-       setEditIdx(i)
-    };
-
-    const stopEditing = (x, i) => {
-        setEditIdx(-1);
-        axios.put(`http://localhost:3004/users/${x}`, players[i]).then(
-            res => {
-                //console.log(res);
-            }
-        )
-        window.location.reload();
-    };
-
-
-    const handleChange = (e, name, i, x) => {
-        const {value} = e.target;
-        setPlayers(
-            players.map((row, j) => j === i ? ({...row, [name]: value}) : row )
-        );
-        console.log(players[i]);
-    };
-
-    const handleSort = (colName) => {
-        setColToSort(colName);
-        setSortDirection(colToSort === colName ? invert[sortDirection] : 'asc')
-    }
+    
 
     return (
         <div className='bg'>
             <Menu/>
             <div className='container'>
-                <h2 className="header">Welcome to the Golf League Application!</h2>
-                <div>
-                    <ViewPlayers
-                    handleRemove={handleRemove}
-                    startEditing={startEditing}
-                    editIdx={editIdx}
-                    handleChange={handleChange}
-                    stopEditing={stopEditing}
-                    handleSort={handleSort}
-                    data={orderBy(players, colToSort, sortDirection)}
-                    header={[
-                        {
-                            name: "First Name",
-                            prop: 'First'
-                        },
-                        {
-                            name: "Last Name",
-                            prop: 'Last'
-                        },
-                        {
-                            name: "Email",
-                            prop: 'Email'
-                        },
-                        {
-                            name: "Phone",
-                            prop: 'Phone'
-                        },
-                        {
-                            name: "Handicap",
-                            prop: 'Handicap'
-                        },
-                    ]}
-
-                    />
+                <div className="title-card">
+                    <a>Welcome to Golfi, the all-in-one golf app!</a>
+                    <img className="homepageBG-img" src={require('./homepageBG.jpg')} alt="golf" width="50%"/>
                 </div>
             </div>
         </div>
