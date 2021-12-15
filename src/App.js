@@ -20,28 +20,30 @@ class App extends Component {
 
     render() { 
         return (
-            <Router>
-                <div className={'App'}>
-                    <Switch>
-                        <AuthProvider>
-                            <Route exact path="/">
-                                <Redirect to="/Login" />
-                            </Route>
-                            <Route exact path="/Login" component={login} />
-                            <Route exact path="/SignUp" component={SignUp} />
-                            <Route exact path="/forgot-password" component={ForgotPassword} />
-                            {/* Private Routes */}
-                            <PrivateRoute exact path="/Home" component={Home} />
-                            <PrivateRoute exact path="/Friends" component={Friends} />
-                            <PrivateRoute exact path="/global-chat" component={Chat} />
-                            <PrivateRoute exact path="/Add" component={playerForm} />
-                            <PrivateRoute exact path="/Profile" component={Profile} />
-                            <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
-                            <PrivateRoute exact path="/Scorecard" component={ScoreCard} />
-                        </AuthProvider>
-                    </Switch>
-                </div>
-            </Router>
+            <div className='App'>
+                <Router>
+                    
+                        <Switch>
+                            <AuthProvider>
+                                <Route exact path="/">
+                                    <Redirect to="/Login" />
+                                </Route>
+                                <Route exact path="/Login" component={login} />
+                                <Route exact path="/SignUp" component={SignUp} />
+                                <Route exact path="/forgot-password" component={ForgotPassword} />
+                                {/* Private Routes */}
+                                <PrivateRoute exact path="/Home" component={Home} />
+                                <PrivateRoute exact path="/Friends" component={Friends} />
+                                <PrivateRoute exact path="/global-chat" component={Chat} />
+                                <PrivateRoute exact path="/Add" component={playerForm} />
+                                <PrivateRoute exact path="/Profile" component={Profile} />
+                                <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+                                <PrivateRoute exact path="/Scorecard" component={ScoreCard} />
+                            </AuthProvider>
+                        </Switch>
+                    
+                </Router>
+            </div>
         );
     }
 }

@@ -1,24 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,600");
 
 :root {
-  --background: rgba(0,0,0);
+  --background: rgba(0, 0, 0);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+.header1 {
+  margin-top: 0vh !important;
+}
+
 body {
-	margin: 0;
-	background: #222;
-	font-family: 'Work Sans', sans-serif;
-	font-weight: 400;
+  margin: 0;
+  left: 0;
+  background: #222;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
 }
 
 .logo {
-    padding-top: .5rem;
-    color: white;
-    text-decoration: none;
+  padding-top: 0.5rem;
+  color: white;
+  text-decoration: none;
 }
 
 .content {
@@ -28,17 +35,20 @@ body {
   background-blend-mode: multiply;
   background-size: cover;
   display: grid;
-  place-items: center;
+  place-items: left;
 }
 
 /* navigation styles start here */
 
 header {
   background: var(--background);
-  text-align: center;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
   position: fixed;
   z-index: 999;
   width: 100%;
+  height: 4.5rem;
 }
 
 .nav-toggle {
@@ -48,14 +58,14 @@ header {
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(white, .75);
+  outline: 3px solid rgba(white, 0.75);
 }
 
 .nav-toggle-label {
   position: absolute;
   top: 0;
-  left: 0;
-  margin-left: 1em;
+  right: 0;
+  margin-right: 1em;
   height: 100%;
   display: flex;
   align-items: center;
@@ -74,7 +84,7 @@ header {
 
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -87,10 +97,13 @@ header {
 }
 
 nav {
-  position: absolute;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   text-align: left;
   top: 100%;
-  left: 0;
+  left: 10;
   background: var(--background);
   width: 100%;
   transform: scale(1, 0);
@@ -99,8 +112,8 @@ nav {
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
+  margin-left: 40vw;
+  margin-top: -6vh;
   list-style: none;
 }
 
@@ -123,7 +136,7 @@ nav a:hover {
 }
 
 .nav-toggle:checked ~ nav {
-  transform: scale(1,1);
+  transform: scale(1, 1);
 }
 
 .nav-toggle:checked ~ nav a {
@@ -140,59 +153,56 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
   }
-  
-  .logo{
+
+  .logo {
     color: white;
     grid-column: 2 / 3;
   }
 
-
-  
   nav {
     all: unset;
     position: relative;
-    text-align: left;
+    text-align: right;
     transition: none;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     background: none;
     top: initial;
     left: initial;
-    
-    
+
     grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-  
+
   nav ul {
     display: flex;
   }
-  
+
   nav li {
     margin-left: 3em;
     margin-bottom: 0;
   }
-  
+
   nav a {
     opacity: 1;
     position: relative;
   }
-  
+
   nav a::before {
-    content: '';
+    content: "";
     display: block;
     height: 5px;
     background: white;
     position: absolute;
-    top: -.75em;
+    top: -0.75em;
     left: 0;
     right: 0;
     transform: scale(0, 1);
     transition: transform ease-in-out 250ms;
   }
-  
+
   nav a:hover::before {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 }
