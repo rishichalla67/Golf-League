@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from "react-router-dom"
 import {useAuth} from '../../contexts/AuthContext'
+import { auth } from '../../firebase';
 import "./Menu.css";
 
 
@@ -11,6 +12,7 @@ export default function Menu() {
     const history = useHistory()
 
     async function handleLogOut() {
+        auth.signOut()
         setError('')
 
         try {
@@ -22,9 +24,9 @@ export default function Menu() {
     }
 
     return(
-        <header className="header1">
-            <h1 class="logo"><Link to="/Home">golFi</Link></h1>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
+        <div className="header1">
+            <h1 className="logo"><Link to="/Home">golFi</Link></h1>
+            <input type="checkbox" id="nav-toggle" className="nav-toggle"/>
             <nav>
                 <ul>
                     <li><a href="/Home" style={{color: 'white'}}>Home</a></li>
@@ -34,9 +36,9 @@ export default function Menu() {
                     <li><a href="#" onClick={handleLogOut} style={{color: 'white'}}>Logout</a></li>
                 </ul>
             </nav>
-            <label for="nav-toggle" class="nav-toggle-label">
+            <label htmlFor="nav-toggle" className="nav-toggle-label">
                 <span></span>
             </label>
-        </header>
+        </div>
     );
 }

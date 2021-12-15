@@ -1,9 +1,7 @@
-.navbar {
-  margin-top: 4vh !important;
-}
-
 .d-body {
   background-color: #282c34;
+  height: 100vh;
+  overflow: hidden !important;
 }
 
 main {
@@ -45,19 +43,20 @@ button .messageForm {
 input {
   line-height: 1.5;
   width: 94%;
+  height: auto !important;
   font-size: 1.5rem;
   background: rgb(58, 58, 58);
   color: white;
   outline: none;
   border: none;
   padding: 0 10px;
-  height: 2rem;
+  height: 1.5rem;
 }
 
 button {
-  background-color: #282c34; /* Green */
+  background-color: #68e0b2; /* Green */
   border: none;
-  color: white;
+  color: black;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -88,7 +87,7 @@ p {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 25px;
   position: relative;
   color: white;
@@ -119,8 +118,9 @@ p {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+  padding-bottom: ;
 }
 
 .displayName {
-  padding-bottom: 1rem;
+  padding: 0px 0.1rem 0.5rem 0.1rem;
 }

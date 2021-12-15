@@ -9,6 +9,7 @@ import * as FirestoreService from '../../firebase';
 import './Chat.css'
 import firebase from 'firebase/app'
 import { useAuthState } from 'react-firebase-hooks/auth';
+import SendIcon from '@mui/icons-material/Send';
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -26,6 +27,7 @@ export default function Chat() {
 
         const {uid, photoURL, displayName} = auth.currentUser;
         
+        console.log(displayName)
 
         await messagesRef.add({
             text: formValue,
@@ -44,15 +46,9 @@ export default function Chat() {
     const [error, setError] = useState("")
     const {currentUser, logout} = useAuth()
     const history = useHistory()
-    
-    // function sendMessage(e) {
-    //     e.preventDefault();
-    //     setError(null);
-
-        
-    // }
 
     function ChatMessage(props) {
+        console.log(props)
         const {text, uid, photoURL, displayName} = props.message;
 
         const messageClass = uid === auth.currentUser.uid ? 'sent' : 'recieved';
@@ -60,28 +56,31 @@ export default function Chat() {
         return (
             <div className={`message ${messageClass}`}>
                 <img className="userIMG" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-                <a className="displayName"> {displayName} </a>
+                <a className="displayName">  {displayName}  </a>
                 <p>{text}</p>
             </div>
         ) 
     }
 
     return (
-        <div className="d-body">
-            <div ><Menu/></div>
-            <main>
-                {messages && messages.map(msg => <ChatMessage key={msg.uid} message={msg}/>)}
+        <>
+            <Menu className="nav"/>
+            <div className="d-body">
+                
+                <main>
+                    {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
 
-                <div ref={dummy}></div>                
-            </main>
-            <form onSubmit={sendMessage} className="messageForm">
+                    <div ref={dummy}></div>                
+                </main>
+                <form onSubmit={sendMessage} className="messageForm">
 
-                <input placeholder="Enter message here..." value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-                <button type='submit'>Send</button>
+                    <input placeholder="Enter message here..." value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
+                    <button type='submit'><SendIcon/></button>
 
-            </form>
+                </form>
 
-            
-        </div>
+                
+            </div>
+        </>
     );
 }
