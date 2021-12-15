@@ -12,3 +12,20 @@
   font-size: 50px;
   padding-top: 150px;
 }
+
+@media screen and (max-width: 800px) {
+  .not-mobile {
+    display: none;
+  }
+
+  .disclaimer {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+
+  .sarcastic-redirect {
+    padding-top: 100px;
+    padding: 100px 20px 20px 20px; /*top right bottom left*/
+    font-size: 1.5rem;
+  }
+}
