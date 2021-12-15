@@ -24,14 +24,17 @@ export default function Chat() {
     const sendMessage = async(e) => {
         e.preventDefault();
 
-        const {uid, photoURL} = auth.currentUser;
+        const {uid, photoURL, displayName} = auth.currentUser;
+        
 
         await messagesRef.add({
             text: formValue,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
-            photoURL
+            photoURL,
+            displayName
         });
+        console.log(messagesRef)
 
         setFormValue('');
 
@@ -50,13 +53,14 @@ export default function Chat() {
     // }
 
     function ChatMessage(props) {
-        const {text, uid, photoURL} = props.message;
+        const {text, uid, photoURL, displayName} = props.message;
 
         const messageClass = uid === auth.currentUser.uid ? 'sent' : 'recieved';
 
         return (
             <div className={`message ${messageClass}`}>
                 <img className="userIMG" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+                <a className="displayName"> {displayName} </a>
                 <p>{text}</p>
             </div>
         ) 
@@ -70,7 +74,7 @@ export default function Chat() {
 
                 <div ref={dummy}></div>                
             </main>
-            <form onSubmit={sendMessage} classname="messageForm">
+            <form onSubmit={sendMessage} className="messageForm">
 
                 <input placeholder="Enter message here..." value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
                 <button type='submit'>Send</button>
