@@ -3,15 +3,39 @@ import { Card, Form, Button, Container, Alert } from 'react-bootstrap';
 import Menu from "../Menu/Menu";
 import { AuthProvider, useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom';
+import firebase from 'firebase/app'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import './login.css';
+
+const auth = firebase.auth();
+const firestore = firebase.firestore;
 
 
 export default function Login() {
+    
     const emailRef = useRef()
     const passwordRef = useRef()
     const { login } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
+
+    const [user] = useAuthState(auth)
+    const signInWithGoogle = async(e) => {
+        try{
+            const provider = new firebase.auth.GoogleAuthProvider();
+            const res = await auth.signInWithPopup(provider)
+            console.log(res.user.displayName)
+            if(res.user.displayName == null){
+                history.push("/")
+            }else{
+                history.push('/Home')
+            }
+        }catch (error) {
+            console.log(error.message)
+        }
+        
+    }
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -48,9 +72,12 @@ export default function Login() {
                             <Form.Control type="password" ref={passwordRef} required />
                         </Form.Group>
                         <Button disabled={loading} className="w-100" type="submit">Log In</Button>
+                        <p></p>
+                        <Button disabled={loading} className="w-100" style={{backgroundColor: '#ffcccb', color: 'black'}} onClick={signInWithGoogle}>Sign In With Google</Button>
                     </Form>
                     <div className="w-100 text-center mt-3">
                         <Link to='/forgot-password'>Forgot Password?</Link>
+                        
                     </div>
                     
                 </Card>

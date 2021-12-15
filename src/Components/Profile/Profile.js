@@ -22,11 +22,11 @@ export default function Profile() {
         }
     }
     return (
-        <body  style={{background: 'rgb(119, 255, 180)'}}>
+        <body className="container1" style={{background: 'rgb(119, 255, 180)'}}>
             <Menu/>
             <Container className="d-flex align-items-center justify-content-center container" style={{minHeight: "100vh", background: "none", paddingTop: '-50%'}}>
             <>
-                <div className="w-100" style={{maxWidth: '100rem'}}></div>
+                <div className="d-flex align-items-center" style={{maxWidth: '100rem', alignItems: 'auto'}}></div>
                     <Card>
                         <Card.Body>
                             <h2 className="text-center mb-1" style={{padding: "1.5rem"}}>Profile</h2>
@@ -34,10 +34,11 @@ export default function Profile() {
                             <strong>Email:</strong> {currentUser.email}
                             <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update Profile</Link>
                         </Card.Body>
+                        <div className="w-100 text-center mt-2"> 
+                            <Button variant="link" onClick={handleLogOut} style={{color: 'black'}}><b>Log Out</b></Button>
+                        </div>
                     </Card>
-                    <div className="w-100 text-center mt-2"> 
-                        <Button variant="link" onClick={handleLogOut} style={{color: 'black'}}><b>Log Out</b></Button>
-                    </div>
+                    
             </>
             </Container>
         </body>

@@ -22,7 +22,7 @@ export default function Menu() {
     }
 
     return(
-        <header>
+        <header className="header1">
             <h1 class="logo"><Link to="/Home">golFi</Link></h1>
             <input type="checkbox" id="nav-toggle" class="nav-toggle"/>
             <nav>
