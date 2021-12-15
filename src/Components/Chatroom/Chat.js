@@ -15,6 +15,7 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 export default function Chat() {
+    const sendDisabled = false;
     const dummy = useRef();
     const messagesRef = firestore.collection('messages');
     const query = messagesRef.orderBy('createdAt').limit(25);
@@ -28,14 +29,15 @@ export default function Chat() {
         const {uid, photoURL, displayName} = auth.currentUser;
         
         console.log(displayName)
-
-        await messagesRef.add({
-            text: formValue,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            uid,
-            photoURL,
-            displayName
-        });
+        if(formValue !== ''){
+            await messagesRef.add({
+                text: formValue,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                uid,
+                photoURL,
+                displayName
+            });
+        }
         console.log(messagesRef)
 
         setFormValue('');
@@ -74,8 +76,9 @@ export default function Chat() {
                 </main>
                 <form onSubmit={sendMessage} className="messageForm">
 
-                    <input placeholder="Enter message here..." value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-                    <button type='submit'><SendIcon/></button>
+                    <input placeholder="Enter message here..." value={formValue} onChange={((e) => 
+                        setFormValue(e.target.value))}/>
+                    <button type='submit' disabled={sendDisabled}><SendIcon className="icon"/></button>
 
                 </form>
 

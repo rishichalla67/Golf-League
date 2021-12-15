@@ -45,7 +45,7 @@ body {
   position: fixed;
   z-index: 999;
   width: 100%;
-  height: 5.5rem;
+  height: 4rem;
 }
 
 .nav-toggle {
@@ -108,9 +108,11 @@ nav {
   transition: transform 400ms ease-in-out;
 }
 
-nav ul {
-  margin-left: 40vw;
-  margin-top: -4vh;
+.header1 nav ul {
+  display: flex;
+  justify-content: flex-end;
+  /* margin-left: 40vw; */
+  margin-top: -50px;
   list-style: none;
 }
 
@@ -151,6 +153,7 @@ nav li:hover {
   }
 
   .logo {
+    line-height: auto;
     color: white;
     grid-column: 2 / 3;
   }
