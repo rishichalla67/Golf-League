@@ -33,7 +33,7 @@ export default function Menu() {
                     <li><a href="/Profile" style={{color: 'white'}}>Profile</a></li>
                     <li><a href="/Friends" style={{color: 'white'}}>Friends</a></li>
                     <li><a href="/global-chat" style={{color: 'white'}}>Chat</a></li>
-                    <li><a href="#" onClick={handleLogOut} style={{color: 'white'}}>Logout</a></li>
+                    <li><a href="/simpleswap-affiliate-widget" style={{color: 'white'}}>Exchange</a></li>
                 </ul>
             </nav>
             <label htmlFor="nav-toggle" className="nav-toggle-label">

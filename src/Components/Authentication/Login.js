@@ -52,6 +52,7 @@ export default function Login() {
 
     }
 
+
     return(
         <body className='d-block' style={{background: 'linear-gradient(90deg, rgba(133,127,232,1) 12%, rgba(35,193,150,1) 51%, rgba(34,178,207,1) 95%)'}}>
            

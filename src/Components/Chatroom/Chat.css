@@ -123,9 +123,9 @@ p {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
-  padding-bottom: ;
 }
 
 .displayName {
   padding: 0px 0.1rem 0.5rem 0.1rem;
+  color: white;
 }

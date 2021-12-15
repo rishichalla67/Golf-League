@@ -53,7 +53,7 @@ export default function Chat() {
         console.log(props)
         const {text, uid, photoURL, displayName} = props.message;
 
-        const messageClass = uid === auth.currentUser.uid ? 'sent' : 'recieved';
+        const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
         return (
             <div className={`message ${messageClass}`}>
@@ -67,7 +67,7 @@ export default function Chat() {
     return (
         <>
             <Menu className="nav"/>
-            <div className="d-body">
+            <div className="d-body bg">
                 
                 <main>
                     {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}

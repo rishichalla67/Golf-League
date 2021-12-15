@@ -13,7 +13,7 @@ import PrivateRoute from "./Components/PrivateRoute"
 import ForgotPassword from "./Components/Authentication/ForgotPassword"
 import Friends from "./Components/Friends/Friends"
 import Chat from './Components/Chatroom/Chat';
-
+import SimpleSwap from './Components/Exchange/SimpleSwap';
 
 
 class App extends Component {
@@ -31,6 +31,7 @@ class App extends Component {
                                 <Route exact path="/Login" component={login} />
                                 <Route exact path="/SignUp" component={SignUp} />
                                 <Route exact path="/forgot-password" component={ForgotPassword} />
+                                <Route exact path="/simpleswap-affiliate-widget" component={SimpleSwap} />
                                 {/* Private Routes */}
                                 <PrivateRoute exact path="/Home" component={Home} />
                                 <PrivateRoute exact path="/Friends" component={Friends} />
@@ -39,6 +40,7 @@ class App extends Component {
                                 <PrivateRoute exact path="/Profile" component={Profile} />
                                 <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
                                 <PrivateRoute exact path="/Scorecard" component={ScoreCard} />
+                                
                             </AuthProvider>
                         </Switch>
                     

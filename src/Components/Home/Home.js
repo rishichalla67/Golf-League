@@ -29,11 +29,13 @@ export default function Home() {
         <div className='bg'>
             <Menu/>
             <div className='container'>
-                <div className="title-card">
+                <div className="title-card welcome">
                     <a>Welcome to Golfi, the all-in-one golf app!</a>
                     <img className="homepageBG-img" src={require('./homepageBG.jpg')} alt="golf" width="50%"/>
                 </div>
+                
             </div>
+            
         </div>
     );
 }
