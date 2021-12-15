@@ -30,7 +30,7 @@ export default function Menu() {
                     <li><a href="/Home" style={{color: 'white'}}>Home</a></li>
                     <li><a href="/Profile" style={{color: 'white'}}>Profile</a></li>
                     <li><a href="/Friends" style={{color: 'white'}}>Friends</a></li>
-                    <li><a href="/global-chat" style={{color: 'white'}}>Global Chat</a></li>
+                    <li><a href="/global-chat" style={{color: 'white'}}>Chat</a></li>
                     <li><a href="#" onClick={handleLogOut} style={{color: 'white'}}>Logout</a></li>
                 </ul>
             </nav>

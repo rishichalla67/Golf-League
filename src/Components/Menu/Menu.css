@@ -10,10 +10,6 @@
   box-sizing: border-box;
 }
 
-.header1 {
-  margin-top: 0vh !important;
-}
-
 body {
   margin: 0;
   left: 0;
@@ -40,15 +36,17 @@ body {
 
 /* navigation styles start here */
 
-header {
+.header1 {
   background: var(--background);
   text-align: left;
+  justify-content: center;
   padding-left: 10px;
   padding-right: 10px;
   position: fixed;
   z-index: 999;
   width: 100%;
-  height: 4.5rem;
+  height: 5.5rem;
+  margin-top: -10vh !important;
 }
 
 .nav-toggle {
@@ -113,7 +111,7 @@ nav {
 
 nav ul {
   margin-left: 40vw;
-  margin-top: -6vh;
+  margin-top: -4vh;
   list-style: none;
 }
 
