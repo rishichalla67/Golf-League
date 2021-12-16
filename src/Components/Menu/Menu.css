@@ -93,6 +93,13 @@ body {
   top: 7px;
 }
 
+.connect-wallet {
+  background: none;
+  border: none;
+  color: white;
+  margin-top: -1px;
+}
+
 nav {
   display: flex !important;
   align-items: center;
@@ -167,7 +174,6 @@ nav li:hover {
     background: none;
     top: initial;
     left: initial;
-
     grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;

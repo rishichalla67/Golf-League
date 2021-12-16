@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
 import { Card, Form, Button, Container, Alert } from 'react-bootstrap';
-import Menu from "../Menu/Menu";
 import { AuthProvider, useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom';
 import firebase from 'firebase/app'
@@ -8,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import './login.css';
 
 const auth = firebase.auth();
-const firestore = firebase.firestore;
+const firestore = firebase.firestore();
 
 
 export default function Login() {
@@ -20,6 +19,8 @@ export default function Login() {
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
+    
+    let exists = false;
     const [user] = useAuthState(auth)
     const signInWithGoogle = async(e) => {
         try{
@@ -29,6 +30,7 @@ export default function Login() {
             if(res.user.displayName == null){
                 history.push("/")
             }else{
+                
                 history.push('/Home')
             }
         }catch (error) {
@@ -44,6 +46,7 @@ export default function Login() {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
+            
             history.push("/Home")
         } catch {
             setError('Failed to log in')

@@ -1,14 +1,10 @@
 import React, {useRef, useState} from 'react'
-import { Card, Button, Alert, Container } from 'react-bootstrap'
 import {Link, useHistory} from "react-router-dom"
 import Menu from '../Menu/Menu'
 import {useAuth} from '../../contexts/AuthContext'
-import { db } from '../../firebase'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import * as FirestoreService from '../../firebase';
 import './Chat.css'
 import firebase from 'firebase/app'
-import { useAuthState } from 'react-firebase-hooks/auth';
 import SendIcon from '@mui/icons-material/Send';
 
 const auth = firebase.auth();
@@ -28,7 +24,7 @@ export default function Chat() {
 
         const {uid, photoURL, displayName} = auth.currentUser;
         
-        console.log(displayName)
+        
         if(formValue !== ''){
             await messagesRef.add({
                 text: formValue,
@@ -50,7 +46,7 @@ export default function Chat() {
     const history = useHistory()
 
     function ChatMessage(props) {
-        console.log(props)
+        // console.log(props)
         const {text, uid, photoURL, displayName} = props.message;
 
         const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
@@ -78,7 +74,7 @@ export default function Chat() {
 
                     <input placeholder="Enter message here..." value={formValue} onChange={((e) => 
                         setFormValue(e.target.value))}/>
-                    <button type='submit' disabled={sendDisabled}><SendIcon className="icon"/></button>
+                    <button className="send-button" type='submit' disabled={sendDisabled}><SendIcon className="icon"/></button>
 
                 </form>
 
