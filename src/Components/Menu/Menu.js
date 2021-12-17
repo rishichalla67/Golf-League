@@ -5,81 +5,11 @@ import firebase from 'firebase/app'
 import { auth } from '../../firebase';
 import "./Menu.css";
 import {ethers} from 'ethers';
+import { networks } from '../Utils/Networks';
 
 const firestore = firebase.firestore();
 
-const networks = [
-    {
-      chainId: `0x${Number(137).toString(16)}`,
-      chainName: "Polygon Mainnet",
-      nativeCurrency: {
-        name: "MATIC",
-        symbol: "MATIC",
-        decimals: 18
-      },
-      rpcUrls: ["https://polygon-rpc.com/"],
-      blockExplorerUrls: ["https://polygonscan.com/"]
-    },
-    {
-      chainId: `0x${Number(56).toString(16)}`,
-      chainName: "Binance Smart Chain Mainnet",
-      nativeCurrency: {
-        name: "Binance Chain Native Token",
-        symbol: "BNB",
-        decimals: 18
-      },
-      rpcUrls: [
-        "https://bsc-dataseed1.binance.org",
-        "https://bsc-dataseed2.binance.org",
-        "https://bsc-dataseed3.binance.org",
-        "https://bsc-dataseed4.binance.org",
-        "https://bsc-dataseed1.defibit.io",
-        "https://bsc-dataseed2.defibit.io",
-        "https://bsc-dataseed3.defibit.io",
-        "https://bsc-dataseed4.defibit.io",
-        "https://bsc-dataseed1.ninicoin.io",
-        "https://bsc-dataseed2.ninicoin.io",
-        "https://bsc-dataseed3.ninicoin.io",
-        "https://bsc-dataseed4.ninicoin.io",
-        "wss://bsc-ws-node.nariox.org"
-      ],
-      blockExplorerUrls: ["https://bscscan.com"]
-    },
-    {
-        chainId: `0x${Number(1666600000).toString(16)}`,
-        chainName: "Harmony Mainnet Shard 0",
-        nativeCurrency: {
-          name: "One",
-          symbol: "ONE",
-          decimals: 18
-        },
-        rpcUrls: ["https://api.harmony.one"],
-        blockExplorerUrls: ["https://explorer.harmony.one"]
-    },
-    {
-        chainId: `0x${Number(43114).toString(16)}`,
-        chainName: "Avalanche Mainnet",
-        nativeCurrency: {
-          name: "Avalanche",
-          symbol: "AVAX",
-          decimals: 18
-        },
-        rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
-        blockExplorerUrls: ["https://snowtrace.io/"]
-    },
-    {
-        chainId: `0x${Number(250).toString(16)}`,
-        chainName: "Fantom Opera",
-        nativeCurrency: {
-          name: "Fantom",
-          symbol: "FTM",
-          decimals: 18
-        },
-        rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
-        blockExplorerUrls: ["https://ftmscan.com"]
-    },
-    
-];
+
 
 export default function Menu() {
     
@@ -126,7 +56,7 @@ export default function Menu() {
         if(window.ethereum) {
             window.ethereum.request({method: 'eth_requestAccounts'})
             .then(result => {
-                console.log(result)
+                // console.log(result)
                 accountChangedHandler(result[0])
             })
         } else {
@@ -164,10 +94,10 @@ export default function Menu() {
             const temp = parseFloat(formattedBalance).toFixed(5) //calculate a good decimal threshold for the 
             
             networks.forEach(network => {
-                console.log(network)
+                //console.log(network)
                 if(network.chainId == currentChainId){
-                    console.log(true)
-                    console.log(network.nativeCurrency.symbol)
+                    //console.log(true)
+                    //console.log(network.nativeCurrency.symbol)
                     setTokenTicker(network.nativeCurrency.symbol);
                 }
             })

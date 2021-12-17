@@ -1,3 +1,21 @@
 .container1 {
   overflow: hidden;
 }
+
+.buttons {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.editIcon {
+  margin-bottom: 10px;
+}
+
+.update-profile {
+  width: 20px;
+  height: 50px;
+  border: none !important;
+  background: none !important;
+  color: rgb(78, 208, 252);
+}

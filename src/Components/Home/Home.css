@@ -1,6 +1,6 @@
 :root {
   /* --font-family: Apple Chancery, cursive; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .container {
@@ -15,11 +15,13 @@
 }
 
 .title-card {
+  position: relative;
   padding: 20px;
-  margin: 20vh auto 0;
+  margin: 30px auto 0;
   background: #fff;
   border-radius: 20px;
-  max-width: 60vw;
+  min-width: 300px !important;
+  max-width: 90vh;
 }
 
 .description {
@@ -44,10 +46,31 @@
   padding: 1em 1em;
 }
 
-div {
-  margin-bottom: 1rem;
+.chain-price {
+  display: inline-block;
+  padding: 20px 40px 20px 40px;
+}
+
+.wallet-balance {
+  display: inline-block;
+  padding: 20px 40px 20px 40px;
+}
+
+.account-total {
+  display: inline-block;
+  padding: 20px 40px 20px 40px;
 }
 
 .balances {
   padding: 30px;
+}
+
+.loading {
+  font-size: 75px !important;
+  display: flex;
+  margin: 0 auto 0 !important;
+}
+
+.title-underline {
+  border-bottom: 1px solid;
 }
