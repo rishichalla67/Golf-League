@@ -1,5 +1,5 @@
 :root {
-  --font-family: Apple Chancery, cursive;
+  /* --font-family: Apple Chancery, cursive; */
   overflow: hidden;
 }
 
@@ -15,19 +15,26 @@
 }
 
 .title-card {
-  margin: 0 auto 0;
+  padding: 20px;
+  margin: 20vh auto 0;
   background: #fff;
   border-radius: 20px;
   max-width: 60vw;
-  margin-bottom: 20px;
+}
+
+.description {
+  margin-top: 20px !important;
+  color: black;
 }
 
 .title-card > a {
   position: relative;
+  padding-top: 20px !important;
   margin-top: 1em;
   font-size: 2rem;
   font-weight: 300;
   font-family: var(--font-family);
+  padding-bottom: 20px !important;
 }
 
 .homepageBG-img {
@@ -42,5 +49,5 @@ div {
 }
 
 .balances {
-  padding: 50px;
+  padding: 30px;
 }

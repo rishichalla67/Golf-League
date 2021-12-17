@@ -5,7 +5,9 @@ import './Home.css'
 import {ethers} from 'ethers';
 import firebase from 'firebase'
 import { useAuthState } from 'react-firebase-hooks/auth';
+import axios from 'axios';
 require('firebase/auth')
+
 
 
 
@@ -25,12 +27,26 @@ export default function Home() {
     const [user] = useAuthState(auth);
     const [userWallets, setUserWallets] = useState([])
     const [userBalance, setUserBalance] = useState([]);
+    const [loading, setLoading] = useState();
+    const [ethData, setEthData] = useState(null)
     const walletsRef = firestore.collection('wallets');
 
     useEffect(() => {
-        getWalletsFromUser();
+        (async () => await getWalletsFromUser())();
+        (async () => await getEthData())();
         
     }, [])
+
+    const getEthData = async() => {
+        try{
+            const response = await fetch('https://api.nomics.com/v1/currencies/ticker?key=f4335d03c35fda19304ee5a774da930698ac6ed1&ids=ETH&interval=1d,30d&platform-currency=ETH&per-page=100&page=1');
+            const data = await response.json();
+            console.log(userBalance)
+            setEthData(data);
+        } catch(error){
+            console.log(error.stack)
+        }
+    }
 
     const getWalletsFromUser = async() => {
         await walletsRef.doc(user.uid).get()
@@ -49,12 +65,14 @@ export default function Home() {
     
 
     const getUserBalance = (address) => {
-        const balances = []
+        const balances = [];
         // wallets.forEach(address => {
+        
         window.ethereum.request({method: 'eth_getBalance', params: [address, 'latest']})
         .then(balance => {
             const formattedBalance = ethers.utils.formatEther(balance);
-            // console.log(balance, formattedBalance)
+            // const dollarBalance = ethData[0].price * parseFloat(formattedBalance)
+            
             setUserBalance([...userBalance, formattedBalance])
             
         },)
@@ -67,19 +85,17 @@ export default function Home() {
         <div className='bg'>
             <Menu/>
             <div className='container'>
-                <div className="title-card welcome not-connected">
-                    <a>Welcome, {user.displayName}!</a>
-                    <img className="homepageBG-img" src={require('./homepageBG.jpg')} alt="golf" width="50%"/>
-                </div>
                 {/* <button onClick={listAllUsers}>List all Users</button> */}
                 <div className="title-card welcome connected">
-                    <a>Check your associated wallets below:</a>
-                    {
+                    <h2>Welcome, {user.displayName}!</h2>
+                    <a className="description">Check your associated wallets below:</a>
+                    { 
                         userBalance && userBalance.map(balance=>{
                             return(
-                                <div className="balances">
+                                <div className="balances" key={user.uid}>
                                     <h4>Wallet Balance: {balance} Ξ</h4>
                                 </div>
+                                
                             )
                         })
                     }
