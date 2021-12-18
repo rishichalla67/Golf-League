@@ -57,7 +57,7 @@ export default function Home() {
 
     const getPricingData = async() => {
         try{
-            const response = await fetch('https://api.nomics.com/v1/currencies/ticker?key=f4335d03c35fda19304ee5a774da930698ac6ed1&interval=1h,30d&per-page=1000&page=1');
+            const response = await fetch('/v1/currencies/ticker?key=f4335d03c35fda19304ee5a774da930698ac6ed1&interval=1h,30d&per-page=1000&page=1');
             const data = await response.json();
             return data
         } catch(error){
