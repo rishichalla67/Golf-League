@@ -7,6 +7,7 @@ import "./Menu.css";
 import {ethers} from 'ethers';
 import { networks } from '../Utils/Networks';
 
+
 const firestore = firebase.firestore();
 
 
@@ -34,6 +35,7 @@ export default function Menu() {
     }
 
     useEffect(() => {
+        
         if(typeof window.ethereum !== 'undefined') {
             connectWalletHandler();
             

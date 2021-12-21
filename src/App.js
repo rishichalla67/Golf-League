@@ -14,6 +14,7 @@ import ForgotPassword from "./Components/Authentication/ForgotPassword"
 import Friends from "./Components/Friends/Friends"
 import Chat from './Components/Chatroom/Chat';
 import SimpleSwap from './Components/Exchange/SimpleSwap';
+import RoboAdvisor from './Components/RoboAdvisor/RoboAdvisor'
 
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
                                 <Route exact path="/SignUp" component={SignUp} />
                                 <Route exact path="/forgot-password" component={ForgotPassword} />
                                 <Route exact path="/simpleswap-affiliate-widget" component={SimpleSwap} />
+                                <Route exact path="/robo-advisor-NFA-lol" component={RoboAdvisor} />
                                 {/* Private Routes */}
                                 <PrivateRoute exact path="/Home" component={Home} />
                                 <PrivateRoute exact path="/Friends" component={Friends} />

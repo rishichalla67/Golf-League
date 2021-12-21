@@ -31,7 +31,7 @@ export default function Login() {
                 history.push("/")
             }else{
                 
-                history.push('/Home')
+                history.push('/global-chat')
             }
         }catch (error) {
             console.log(error.message)
